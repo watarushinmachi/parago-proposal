@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTubeチャンネル運用のご提案 | PARAGO. 様</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #faf8f5;
+    color: #2d2a26;
+  }
+
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: #b8926a;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .slide h2 {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    color: #2d2a26;
+  }
+
+  /* ── Slide 1: Cover ── */
+  .slide-cover {
+    background: linear-gradient(160deg, #faf8f5 0%, #f0ebe3 40%, #e8e0d4 100%);
+    text-align: center;
+    align-items: center;
+  }
+  .slide-cover .tag {
+    display: inline-block;
+    background: rgba(184,146,106,0.1);
+    border: 1px solid rgba(184,146,106,0.3);
+    border-radius: 100px;
+    padding: 8px 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    color: #b8926a;
+    font-weight: 600;
+  }
+  .slide-cover h1 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: #2d2a26;
+  }
+  .slide-cover h1 .accent {
+    color: #b8926a;
+  }
+  .slide-cover .subtitle {
+    font-size: 18px;
+    color: #7a756e;
+    margin-bottom: 60px;
+    line-height: 2;
+    font-weight: 300;
+  }
+  .slide-cover .meta {
+    font-size: 14px;
+    color: #a09a92;
+    letter-spacing: 2px;
+  }
+  .slide-cover .client {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2a26;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+  }
+
+  /* ── Slide 2: Purpose ── */
+  .slide-purpose {
+    background: linear-gradient(180deg, #faf8f5 0%, #f5f0ea 100%);
+  }
+  .purpose-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .purpose-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .purpose-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+  .purpose-card.primary::before {
+    background: linear-gradient(90deg, #b8926a, #d4b896);
+  }
+  .purpose-card.secondary::before {
+    background: linear-gradient(90deg, #8ba4a0, #a8c0bc);
+  }
+  .purpose-card .priority {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .purpose-card.primary .priority { color: #b8926a; }
+  .purpose-card.secondary .priority { color: #8ba4a0; }
+  .purpose-card h3 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .purpose-card p {
+    font-size: 14px;
+    color: #7a756e;
+    line-height: 1.9;
+  }
+  .purpose-summary {
+    background: rgba(184,146,106,0.06);
+    border-radius: 16px;
+    padding: 28px 36px;
+    font-size: 15px;
+    color: #5a554e;
+    line-height: 2;
+    text-align: center;
+  }
+
+  /* ── Slide 3: Persona ── */
+  .slide-persona {
+    background: linear-gradient(180deg, #faf8f5 0%, #f2ede6 100%);
+  }
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .persona-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+  }
+  .persona-card .persona-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(184,146,106,0.15);
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    line-height: 1;
+  }
+  .persona-card .persona-tag {
+    display: inline-block;
+    background: rgba(184,146,106,0.1);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: #b8926a;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .persona-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .persona-card .attr {
+    font-size: 13px;
+    color: #b8926a;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .persona-card .pain {
+    font-size: 13px;
+    color: #7a756e;
+    line-height: 1.9;
+    padding: 16px;
+    background: rgba(0,0,0,0.02);
+    border-radius: 12px;
+  }
+  .persona-card .pain-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #a09a92;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* ── Slide 4: Concept ── */
+  .slide-concept {
+    background: linear-gradient(160deg, #2d2a26 0%, #3d3832 50%, #2d2a26 100%);
+    color: #fff;
+  }
+  .slide-concept .section-label {
+    color: #d4b896;
+  }
+  .slide-concept h2 {
+    color: #fff;
+  }
+  .concept-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 44px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .concept-block .concept-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #d4b896;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .concept-block h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #f0ebe3;
+  }
+  .concept-block p {
+    font-size: 14px;
+    color: #a09a92;
+    line-height: 2;
+  }
+  .channel-names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .channel-name-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+  }
+  .channel-name-card .ch-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #d4b896;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .channel-name-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #f0ebe3;
+    line-height: 1.5;
+  }
+
+  /* ── Slide 5: Content Strategy ── */
+  .slide-content {
+    background: linear-gradient(180deg, #faf8f5 0%, #f0ebe3 100%);
+  }
+  .content-ratio {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 48px;
+  }
+  .ratio-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    height: 100%;
+  }
+  .ratio-bar.recruit {
+    width: 80%;
+    background: linear-gradient(90deg, #b8926a, #d4b896);
+    color: #fff;
+  }
+  .ratio-bar.attract {
+    width: 20%;
+    background: linear-gradient(90deg, #8ba4a0, #a8c0bc);
+    color: #fff;
+  }
+  .content-axes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .axis-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .axis-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+  }
+  .axis-card.main::before { background: #b8926a; }
+  .axis-card.sub1::before { background: #c4a882; }
+  .axis-card.sub2::before { background: #d4b896; }
+  .axis-card.attract-axis::before { background: #8ba4a0; }
+  .axis-card .axis-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .axis-card.main .axis-tag,
+  .axis-card.sub1 .axis-tag,
+  .axis-card.sub2 .axis-tag { color: #b8926a; }
+  .axis-card.attract-axis .axis-tag { color: #8ba4a0; }
+  .axis-card h3 {
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .axis-card .axis-desc {
+    font-size: 13px;
+    color: #7a756e;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .axis-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .axis-card ul li {
+    font-size: 13px;
+    color: #5a554e;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+  .axis-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d4b896;
+  }
+  .axis-card.attract-axis ul li::before {
+    background: #a8c0bc;
+  }
+  .axis-card ul li:last-child {
+    border-bottom: none;
+  }
+
+  /* ── Slide 6: Roadmap ── */
+  .slide-roadmap {
+    background: linear-gradient(180deg, #faf8f5 0%, #f5f0ea 100%);
+  }
+  .roadmap-timeline {
+    display: flex;
+    gap: 0;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .roadmap-timeline::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, #b8926a, #d4b896, #8ba4a0);
+  }
+  .roadmap-phase {
+    flex: 1;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .roadmap-phase .phase-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #b8926a;
+    margin: 33px auto 20px;
+    border: 3px solid #faf8f5;
+  }
+  .roadmap-phase:last-child .phase-dot {
+    background: #8ba4a0;
+  }
+  .roadmap-phase .phase-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #b8926a;
+    font-weight: 600;
+  }
+  .roadmap-phase:last-child .phase-label {
+    color: #8ba4a0;
+  }
+  .roadmap-phase h4 {
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .roadmap-phase p {
+    font-size: 12px;
+    color: #7a756e;
+    line-height: 1.7;
+  }
+  .roadmap-note {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 16px;
+    padding: 28px 36px;
+    font-size: 14px;
+    color: #7a756e;
+    line-height: 2;
+  }
+  .roadmap-note strong {
+    color: #b8926a;
+    font-weight: 700;
+  }
+
+  /* ── Slide 7: CTA ── */
+  .slide-cta {
+    background: linear-gradient(160deg, #f0ebe3 0%, #e8e0d4 50%, #f0ebe3 100%);
+    text-align: center;
+    align-items: center;
+  }
+  .slide-cta h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .slide-cta .cta-desc {
+    font-size: 16px;
+    color: #7a756e;
+    margin-bottom: 48px;
+    line-height: 2;
+    font-weight: 300;
+  }
+  .cta-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+  }
+  .cta-step {
+    text-align: center;
+  }
+  .cta-step .num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(184,146,106,0.12);
+    border: 1px solid rgba(184,146,106,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #b8926a;
+    margin: 0 auto 12px;
+  }
+  .cta-step p {
+    font-size: 14px;
+    color: #5a554e;
+    line-height: 1.7;
+  }
+  .cta-arrow {
+    color: #b8926a;
+    font-size: 20px;
+  }
+  .contact-info {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 36px 52px;
+    display: inline-block;
+  }
+  .contact-info .company-name {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #2d2a26;
+  }
+  .contact-info p {
+    font-size: 14px;
+    color: #7a756e;
+    line-height: 2;
+  }
+
+  /* ── Print / PDF ── */
+  @media print {
+    .slide { page-break-after: always; min-height: 100vh; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    .slide { padding: 40px 24px; }
+    .slide-cover h1 { font-size: 28px; }
+    .purpose-cards, .persona-grid, .content-axes { grid-template-columns: 1fr; }
+    .channel-names { grid-template-columns: 1fr; }
+    .roadmap-timeline { flex-direction: column; gap: 24px; }
+    .roadmap-timeline::after { display: none; }
+    .cta-steps { flex-direction: column; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: COVER ============ -->
+<div class="slide slide-cover">
+  <div class="tag">PROPOSAL</div>
+  <p class="client">PARAGO. 様</p>
+  <h1>YouTube<span class="accent">チャンネル運用</span><br>のご提案</h1>
+  <p class="subtitle">
+    美容業界の"当たり前"を塗り替える。<br>
+    スタッフが輝く姿で、採用と信頼を同時に勝ち取る。
+  </p>
+  <p class="meta">合同会社Harbor</p>
+</div>
+
+<!-- ============ SLIDE 2: PURPOSE ============ -->
+<div class="slide slide-purpose">
+  <p class="section-label">PURPOSE</p>
+  <h2>チャンネル運用の目的</h2>
+
+  <div class="purpose-cards">
+    <div class="purpose-card primary">
+      <p class="priority">1ST PRIORITY</p>
+      <h3>ミスマッチのない<br>「質の高い採用」の実現</h3>
+      <p>働く環境・人間関係・価値観をすべてオープンにすることで、「PARAGO.だから働きたい」と思う人だけが集まる採用導線を構築します。</p>
+    </div>
+    <div class="purpose-card secondary">
+      <p class="priority">2ND PRIORITY</p>
+      <h3>信頼を起点とした<br>「本質的な集客」へのレバレッジ</h3>
+      <p>スタッフが輝き、誠実にお客様と向き合う姿を発信。大人女性に「この人たちに任せたい」という安心感を届けます。</p>
+    </div>
+  </div>
+
+  <div class="purpose-summary">
+    採用が変われば、サービスが変わる。サービスが変われば、集客も変わる。<br>
+    PARAGO.の「人」を最大の武器にするチャンネルをご提案します。
+  </div>
+</div>
+
+<!-- ============ SLIDE 3: PERSONA ============ -->
+<div class="slide slide-persona">
+  <p class="section-label">PERSONA</p>
+  <h2>誰に届けるのか</h2>
+
+  <div class="persona-grid">
+    <div class="persona-card">
+      <div class="persona-num">01</div>
+      <div class="persona-tag">30代女性・育休明け / 時短勤務中</div>
+      <h3>再挑戦を願う<br>ママ美容師</h3>
+      <div class="pain">
+        <div class="pain-label">抱えている悩み</div>
+        子供との時間を大切にしたいが、今の店では残業や夜の練習が避けられず、キャリアを諦めかけている。
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-num">02</div>
+      <div class="persona-tag">20代後半〜30代女性</div>
+      <h3>人間関係に疲弊した<br>若手〜中堅</h3>
+      <div class="pain">
+        <div class="pain-label">抱えている悩み</div>
+        技術は好きだが、店内の派閥や陰口、体育会系のノリに疲れ、もっと「素直に」「フラットに」働ける場所を探している。
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-num">03</div>
+      <div class="persona-tag">40代女性・ベテラン層</div>
+      <h3>働き方を模索する<br>実力派</h3>
+      <div class="pain">
+        <div class="pain-label">抱えている悩み</div>
+        売上ノルマや掛け持ち接客に追われ、一人のお客様に寄り添えない現状に疑問。自分を整えながら長く働ける環境を求めている。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: CONCEPT ============ -->
+<div class="slide slide-concept">
+  <p class="section-label">CONCEPT</p>
+  <h2>チャンネルコンセプト</h2>
+
+  <div class="concept-block">
+    <div class="concept-num">CONCEPT 01</div>
+    <h3>「サービス残業、人間関係の不安、終わらない練習——<br>美容業界の"当たり前"を、塗り替える美容室のリアルな裏側」</h3>
+    <p>PARAGO.は、残業ゼロ・営業時間内研修・助け合いのフロアを実現した「美容師の救済」を掲げる美容室。スタッフの働く日常、業界の不都合な真実、そして追求する誠実な技術の裏側をすべて公開します。</p>
+  </div>
+
+  <div class="concept-block">
+    <div class="concept-num">CONCEPT 02</div>
+    <h3>「美容師という仕事は、本来もっと自由で、<br>もっと輝ける場所であるはずだ。」</h3>
+    <p>業界の「当たり前」（夜中までの練習、残業、人間関係の疲弊）を解消し、ブランクや家庭との両立に悩む女性美容師を救済する。スタッフが心から笑って働ける環境から生まれる「本物の技術と優しさ」を、素敵に歳を重ねたい大人女性へ届けるメディア。</p>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <p class="section-label" style="margin-bottom: 20px;">CHANNEL NAME</p>
+    <div class="channel-names">
+      <div class="channel-name-card">
+        <div class="ch-label">PLAN A</div>
+        <h4>PARAGO.｜残業ゼロの美容室のリアル</h4>
+      </div>
+      <div class="channel-name-card">
+        <div class="ch-label">PLAN B</div>
+        <h4>PARAGO.｜美容師が辞めない美容室の裏側</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 5: CONTENT STRATEGY ============ -->
+<div class="slide slide-content">
+  <p class="section-label">CONTENT STRATEGY</p>
+  <h2>コンテンツ戦略</h2>
+
+  <div class="content-ratio">
+    <div class="ratio-bar recruit">採用コンテンツ 80%</div>
+    <div class="ratio-bar attract">集客 20%</div>
+  </div>
+
+  <div class="content-axes">
+    <div class="axis-card main">
+      <div class="axis-tag">MAIN AXIS</div>
+      <h3>ドキュメンタリー・人の物語</h3>
+      <p class="axis-desc">「なぜPARAGO.なのか？」をスタッフ個人のストーリーで語る。</p>
+      <ul>
+        <li>技術研修ドキュメント：営業時間内の研修に密着</li>
+        <li>スタッフ1日密着：残業ゼロ退勤のリアルと家庭との両立</li>
+        <li>オーナー対談：美容業界をどう変えていくか、信念と実績</li>
+        <li>スタッフの本音インタビュー：PARAGO.で「何が手に入ったか」</li>
+      </ul>
+    </div>
+    <div class="axis-card sub1">
+      <div class="axis-tag">SUB AXIS 01</div>
+      <h3>業界への提言・本音トーク</h3>
+      <p class="axis-desc">透明性と信念で、業界の常識に切り込む。</p>
+      <ul>
+        <li>給与・賞与の全公開：透明性の高い経営情報の開示</li>
+        <li>「技術より性格」採用の基準：なぜ「良い人」ばかりなのか</li>
+        <li>美容業界のブラック慣習をぶった切る：提言と改善案</li>
+      </ul>
+    </div>
+    <div class="axis-card sub2">
+      <div class="axis-tag">SUB AXIS 02</div>
+      <h3>技術・施術のこだわり</h3>
+      <p class="axis-desc">「ここで学びたい」「ここで切ってほしい」の両方を満たす。</p>
+      <ul>
+        <li>カウンセリングの全貌：一人に寄り添う「聞く技術」</li>
+        <li>ビフォーアフター：誠実な技術が生む大人女性の変身事例</li>
+      </ul>
+    </div>
+    <div class="axis-card attract-axis">
+      <div class="axis-tag">ATTRACT AXIS（運用3ヶ月後〜）</div>
+      <h3>大人女性の自分磨き</h3>
+      <p class="axis-desc">ファン化と集客を担う、信頼起点のコンテンツ。</p>
+      <ul>
+        <li>30代からのQOLを上げるホームケア・プロの提案</li>
+        <li>内面からの美容習慣：健やかに過ごすためのヒント</li>
+        <li>スタッフお気に入り紹介：本当に良いものだけを届ける</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 6: ROADMAP ============ -->
+<div class="slide slide-roadmap">
+  <p class="section-label">ROADMAP</p>
+  <h2>運用ロードマップ</h2>
+
+  <div class="roadmap-timeline">
+    <div class="roadmap-phase">
+      <div class="phase-label">MONTH 1-2</div>
+      <div class="phase-dot"></div>
+      <h4>基盤構築</h4>
+      <p>チャンネル開設・ブランディング設計<br>初期動画（密着・インタビュー）撮影</p>
+    </div>
+    <div class="roadmap-phase">
+      <div class="phase-label">MONTH 3-4</div>
+      <div class="phase-dot"></div>
+      <h4>コンテンツ拡充</h4>
+      <p>3軸のコンテンツを定期配信<br>業界提言系で認知拡大</p>
+    </div>
+    <div class="roadmap-phase">
+      <div class="phase-label">MONTH 5-6</div>
+      <div class="phase-dot"></div>
+      <h4>採用導線強化</h4>
+      <p>応募導線の最適化<br>反響分析・企画改善</p>
+    </div>
+    <div class="roadmap-phase">
+      <div class="phase-label">MONTH 7~</div>
+      <div class="phase-dot"></div>
+      <h4>集客コンテンツ開始</h4>
+      <p>大人女性向けコンテンツ展開<br>採用＋集客の両輪運用へ</p>
+    </div>
+  </div>
+
+  <div class="roadmap-note">
+    <strong>採用 → 集客の順に段階的に展開。</strong>まず「働く人」の魅力を最大化し、その結果として「この人たちがいるお店に行きたい」という集客が自然に生まれる構造を設計します。
+  </div>
+</div>
+
+<!-- ============ SLIDE 7: CTA ============ -->
+<div class="slide slide-cta">
+  <p class="section-label">NEXT STEP</p>
+  <h2>まずはお気軽に<br>ご相談ください</h2>
+  <p class="cta-desc">
+    PARAGO.様の想いとビジョンをお聞かせください。<br>
+    具体的な企画案と運用プランをご提案します。
+  </p>
+
+  <div class="cta-steps">
+    <div class="cta-step">
+      <div class="num">1</div>
+      <p>お問い合わせ</p>
+    </div>
+    <div class="cta-arrow">→</div>
+    <div class="cta-step">
+      <div class="num">2</div>
+      <p>ヒアリング<br>Zoom 30分</p>
+    </div>
+    <div class="cta-arrow">→</div>
+    <div class="cta-step">
+      <div class="num">3</div>
+      <p>企画案ご提案<br>3営業日以内</p>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <p class="company-name">合同会社Harbor</p>
+    <p>
+      担当：新町<br>
+      ※ このDMへの返信でお気軽にどうぞ
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
